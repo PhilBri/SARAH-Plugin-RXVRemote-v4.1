@@ -1,0 +1,211 @@
+<grammar version="1.0" xml:lang="fr-FR" mode="voice" root="ruleRxvRemote" xmlns="http://www.w3.org/2001/06/grammar" tag-format="semantics/1.0">
+   <rule id="ruleRxvRemote" scope="public">
+      <tag>out.action=new Object(); </tag>
+      <item>Sarah
+         <one-of>
+            <item>allume lampli
+                  <tag>out.action.key="@MAIN:PWR=On"; out.action.tts="l'ampli est allumé"; </tag>
+            </item>
+            <item>eteint lampli
+                  <tag>out.action.key="@MAIN:PWR=Standby" ;out.action.tts="l'ampli est éteind"; </tag>
+            </item>
+            <item>coupe le son de lampli
+                  <tag>out.action.key="@MAIN:MUTE=On/Off" ;out.action.tts="Le son est coupé"; </tag>
+            </item>
+            <item>remet le son de lampli
+                  <tag>out.action.key="@MAIN:MUTE=On/Off" ;out.action.tts="Le son est remis"; </tag>
+            </item>
+            <item>monte le volume de lampli
+                  <tag>out.action.key="@MAIN:VOL=Up 2 dB" ;out.action.tts="le son est monté"; </tag>
+            </item>
+            <item>monte le son de lampli
+                  <tag>out.action.key="@MAIN:VOL=Up 2 dB" ;out.action.tts="le son est monté"; </tag>
+            </item>
+            <item>monte un peu le volume de lampli
+                  <tag>out.action.key="@MAIN:VOL=Up" ;out.action.tts="le son est monté"; </tag>
+            </item>
+            <item>monte un peu le son de lampli
+                  <tag>out.action.key="@MAIN:VOL=Up" ;out.action.tts="le son est monté"; </tag>
+            </item>
+            <item>monte beaucoup le volume de lampi
+                  <tag>out.action.key="@MAIN:VOL=Up 5 dB" ;out.action.tts="le son est monté"; </tag>
+            </item>
+            <item>monte beaucoup le son de lampi
+                  <tag>out.action.key="@MAIN:VOL=Up 5 dB" ;out.action.tts="le son est monté"; </tag>
+            </item>
+            <item>baisse le volume de lampli
+                  <tag>out.action.key="@MAIN:VOL=Down 2 dB"; out.action.tts="Le son est baissé"; </tag>
+            </item>
+            <item>baisse le son de lampli
+                  <tag>out.action.key="@MAIN:VOL=Down 2 dB"; out.action.tts="Le son est baissé"; </tag>
+            </item>
+            <item>baisse un peu le volume de lampli
+                  <tag>out.action.key="@MAIN:VOL=Down" ;out.action.tts="Le son est baissé"; </tag>
+                  </item>
+            <item>baisse un peu le son de lampli
+                  <tag>out.action.key="@MAIN:VOL=Down"; out.action.tts="Le son est baissé"; </tag>
+            </item>
+            <item>baisse beaucoup le volume de lampli
+                  <tag>out.action.key="@MAIN:VOL=Down 5 dB";out.action.tts="Le son est baissé"; </tag>
+            </item>
+            <item>baisse beaucoup le son de lampli
+                  <tag>out.action.key="@MAIN:VOL=Down 5 dB";out.action.tts="Le son est baissé"; </tag>
+            </item>
+<!-- Entrées AV -->
+            <item>sélectionne l'entrée A V 1
+                  <tag>out.action.key="@MAIN:INP=AV1" ;out.action.tts="L'entrée avé 1 est sélectionnée"; </tag>
+            </item>
+            <item>sélectionne l'A V 1
+                  <tag>out.action.key="@MAIN:INP=AV1" ;out.action.tts="L'entrée avé 1 est sélectionnée"; </tag>
+            </item>
+            <item>sélectionne l'entrée A V 2
+                  <tag>out.action.key="@MAIN:INP=AV2" ;out.action.tts="L'entrée avé 2 est sélectionnée"; </tag>
+            </item>
+            <item>sélectionne l'A V 2
+                  <tag>out.action.key="@MAIN:INP=AV2" ;out.action.tts="L'entrée avé 2 est sélectionnée"; </tag>
+            </item>
+            <item>sélectionne l'entrée A V 3
+                  <tag>out.action.key="@MAIN:INP=AV3" ;out.action.tts="L'entrée avé 3 est sélectionnée"; </tag>
+            </item>
+            <item>sélectionne l'A V 3
+                  <tag>out.action.key="@MAIN:INP=AV3" ;out.action.tts="L'entrée avé 3 est sélectionnée"; </tag>
+            </item>
+            <item>sélectionne l'entrée A V 4
+                  <tag>out.action.key="@MAIN:INP=AV4" ;out.action.tts="L'entrée avé 4 est sélectionnée"; </tag>
+            </item>
+            <item>sélectionne l'A V 4
+                  <tag>out.action.key="@MAIN:INP=AV4" ;out.action.tts="L'entrée avé 4 est sélectionnée"; </tag>
+            </item>
+            <item>sélectionne l'entrée A V 5
+                  <tag>out.action.key="@MAIN:INP=AV5" ;out.action.tts="L'entrée avé 5 est sélectionnée"; </tag>
+            </item>
+            <item>sélectionne l'A V 5
+                  <tag>out.action.key="@MAIN:INP=AV5" ;out.action.tts="L'entrée avé 5 est sélectionnée"; </tag>
+            </item>
+            <item>sélectionne l'entrée A V 6
+                  <tag>out.action.key="@MAIN:INP=AV6" ;out.action.tts="L'entrée avé 6 est sélectionnée"; </tag>
+            </item>
+            <item>sélectionne l'A V 6
+                  <tag>out.action.key="@MAIN:INP=AV6" ;out.action.tts="L'entrée avé 6 est sélectionnée"; </tag>
+            </item>
+            <item>sélectionne l'entrée A V 7
+                  <tag>out.action.key="@MAIN:INP=AV7" ;out.action.tts="L'entrée avé 7 est sélectionnée"; </tag>
+            </item>
+            <item>sélectionne l'A V 7
+                  <tag>out.action.key="@MAIN:INP=AV7" ;out.action.tts="L'entrée avé 7 est sélectionnée"; </tag>
+            </item>
+            <item>sélectionne l'entrée auxiliaire
+                  <tag>out.action.key="@MAIN:INP=V-AUX" ;out.action.tts="L'entrée auxiliaire est sélectionnée"; </tag>
+            </item>
+            <item>sélectionne l'auxiliaire
+               <tag>out.action.key="@MAIN:INP=V-AUX" ;out.action.tts="L'entrée auxiliaire est sélectionnée"; </tag>
+            </item>
+<!-- Audio -->
+            <item>sélectionne l'entrée Audio 1
+               <tag>out.action.key="@MAIN:INP=AUDIO1" ;out.action.tts="L'entrée audio 1 est sélectionnée"; </tag>
+            </item>
+            <item>sélectionne l'Audio 1
+               <tag>out.action.key="@MAIN:INP=AUDIO1" ;out.action.tts="L'entrée audio 1 est sélectionnée"; </tag>
+            </item>
+            <item>sélectionne l'entrée Audio 2
+               <tag>out.action.key="@MAIN:INP=AUDIO2" ;out.action.tts="L'entrée audio 2 est sélectionnée"; </tag>
+            </item>
+            <item>sélectionne l'Audio 2
+               <tag>out.action.key="@MAIN:INP=AUDIO2" ;out.action.tts="L'entrée audio 2 est sélectionnée"; </tag>
+            </item>
+            <item>sélectionne l'entrée Audio 3
+               <tag>out.action.key="@MAIN:INP=AUDIO3" ;out.action.tts="L'entrée audio 3 est sélectionnée"; </tag>
+            </item>
+            <item>sélectionne l'entrée Audio 4
+               <tag>out.action.key="@MAIN:INP=AUDIO4" ;out.action.tts="L'entrée audio 4 est sélectionnée"; </tag>
+            </item>
+            <item>sélectionne l'Audio 4
+               <tag>out.action.key="@MAIN:INP=AUDIO4" ;out.action.tts="L'entrée audio 4 est sélectionnée"; </tag>
+            </item>
+
+            <item>sélectionne l'entrée réseau        <tag>out.action.key="@MAIN:INP=NET"      ;out.action.tts="L'entrée réseau est sélectionnée";    </tag></item>
+            <item>sélectionne le réseau              <tag>out.action.key="@MAIN:INP=NET"      ;out.action.tts="L'entrée réseau est sélectionnée";    </tag></item>
+            <item>sélectionne l'entrée serveur       <tag>out.action.key="@MAIN:INP=SERVER"   ;out.action.tts="L'entrée serveur est sélectionnée";   </tag></item>
+            <item>sélectionne le serveur             <tag>out.action.key="@MAIN:INP=SERVER"   ;out.action.tts="L'entrée serveur est sélectionnée";   </tag></item>
+            <item>sélectionne l'entrée net radio     <tag>out.action.key="@MAIN:INP=NET RADIO";out.action.tts="L'entrée net radio est sélectionnée"; </tag></item>
+            <item>sélectionne la net radio           <tag>out.action.key="@MAIN:INP=NET RADIO";out.action.tts="L'entrée net radio est sélectionnée"; </tag></item>
+            <item>sélectionne l'entrée U S B         <tag>out.action.key="@MAIN:INP=USB"      ;out.action.tts="L'entrée U S B est sélectionnée";     </tag></item>
+            <item>sélectionne l'U S B                <tag>out.action.key="@MAIN:INP=USB"      ;out.action.tts="L'entrée U S B est sélectionnée";     </tag></item>
+            <item>sélectionne l'entrée A I pode      <tag>out.action.key="@MAIN:INP=iPod(USB)";out.action.tts="L'entrée A I pode est sélectionnée";  </tag></item>
+            <item>sélectionne l'A I pode             <tag>out.action.key="@MAIN:INP=iPod(USB)";out.action.tts="L'entrée A I pode est sélectionnée";  </tag></item>
+            <item>sélectionne l'entrée air plèye     <tag>out.action.key="@MAIN:INP=AirPlay"  ;out.action.tts="L'entrée air plèye est sélectionnée"; </tag></item>
+            <item>sélectionne l'air plèye            <tag>out.action.key="@MAIN:INP=AirPlay"  ;out.action.tts="L'entrée air plèye est sélectionnée"; </tag></item>
+<!-- Scènes -->
+            <item>sélectionne la scène 1
+               <tag>out.action.key="@MAIN:INP=Scene 1"  ;out.action.tts="La scène 1 est sélectionnée";         </tag>
+            </item>
+            <item>sélectionne la scène 2
+               <tag>out.action.key="@MAIN:INP=Scene 2"  ;out.action.tts="La scène 2 est sélectionnée";         </tag>
+            </item>
+            <item>sélectionne la scène 3
+               <tag>out.action.key="@MAIN:INP=Scene 3"  ;out.action.tts="La scène 3 est sélectionnée";         </tag>
+            </item>
+            <item>sélectionne la scène 4
+               <tag>out.action.key="@MAIN:INP=Scene 4"  ;out.action.tts="La scène 4 est sélectionnée";         </tag>
+            </item>
+            <item>sélectionne la scène 5
+               <tag>out.action.key="@MAIN:INP=Scene 5"  ;out.action.tts="La scène 5 est sélectionnée";         </tag>
+            </item>
+            <item>sélectionne la scène 6
+               <tag>out.action.key="@MAIN:INP=Scene 6"  ;out.action.tts="La scène 6 est sélectionnée";         </tag>
+            </item>
+            <item>sélectionne la scène 7
+               <tag>out.action.key="@MAIN:INP=Scene 7"  ;out.action.tts="La scène 7 est sélectionnée";         </tag>
+            </item>
+            <item>sélectionne la scène 8
+               <tag>out.action.key="@MAIN:INP=Scene 8"  ;out.action.tts="La scène 8 est sélectionnée";         </tag>
+            </item>
+            <item>sélectionne la scène 9
+               <tag>out.action.key="@MAIN:INP=Scene 9"  ;out.action.tts="La scène 9 est sélectionnée";         </tag>
+            </item>
+            <item>sélectionne la scène 10
+               <tag>out.action.key="@MAIN:INP=Scene 10" ;out.action.tts="La scène 10 est sélectionnée";        </tag>
+            </item>
+<!-- Radio Tuner -->
+            <item>sélectionne l'entrée radio
+               <tag>out.action.key="@MAIN:INP=TUNER" ;out.action.tts="La radio est sélectionée"; </tag>
+            </item>
+            <item>sélectionne la radio
+               <tag>out.action.key="@MAIN:INP=TUNER" ;out.action.tts="La radio est sélectionée"; </tag>
+            </item>
+            <item>sélectionne la radio 1
+               <tag>out.action.key="@TUN:PRESET=1" ;out.action.tts="sélection de la radio 1"; </tag>
+            </item>
+            <item>sélectionne la radio 2
+               <tag>out.action.key="@TUN:PRESET=2" ;out.action.tts="sélection de la radio 2"; </tag>
+            </item>
+            <item>sélectionne la radio 3
+               <tag>out.action.key="@TUN:PRESET=3" ;out.action.tts="sélection de la radio 3"; </tag>
+            </item>
+            <item>sélectionne la radio 4
+               <tag>out.action.key="@TUN:PRESET=4" ;out.action.tts="sélection de la radio 4"; </tag>
+            </item>
+            <item>sélectionne la radio 5
+               <tag>out.action.key="@TUN:PRESET=5" ;out.action.tts="sélection de la radio 5"; </tag>
+            </item>
+            <item>sélectionne la radio 6
+               <tag>out.action.key="@TUN:PRESET=6" ;out.action.tts="sélection de la radio 6"; </tag>
+            </item>
+            <item>sélectionne la radio 7
+               <tag>out.action.key="@TUN:PRESET=7" ;out.action.tts="sélection de la radio 7"; </tag>
+            </item>
+            <item>sélectionne la radio 8
+               <tag>out.action.key="@TUN:PRESET=8" ;out.action.tts="sélection de la radio 8"; </tag>
+            </item>
+            <item>sélectionne la radio 9
+               <tag>out.action.key="@TUN:PRESET=9" ;out.action.tts="sélection de la radio 9"; </tag>
+            </item>
+            <item>sélectionne la radio 10
+               <tag>out.action.key="@TUN:PRESET=10" ;out.action.tts="sélection de la radio 10"; </tag>
+            </item>
+         </one-of>
+      </item>
+      <tag>out.action._attributes.uri="http://127.0.0.1:8080/sarah/RxvRemote";</tag>
+   </rule>
+</grammar>
+

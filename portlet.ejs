@@ -1,0 +1,94 @@
+<% stylesheet('/RxvRemote/www/less/RxvRemote.css'); %>
+<% script ('http://localhost:15678/socket.io/socket.io.js') %>
+<% script ("/RxvRemote/www/portlet.js") %>
+
+<!-- Logo -->
+<!--<div id='logo'><img id="yam-logo" src="/RxvRemote/www/images/yamaha.png"></div>-->
+
+<!-- Plugin Name -->	
+<!--
+<div class='plugin'>
+	<div class='text'><%= plugin.name %></div>
+	<div class='vers'>v.<%= Config.modules.RxvRemote.version %></div>
+</div>-->
+
+<!-- Title -->
+<div class="container-fluid portlet-handle">
+	<div class="row main-row">
+		<div class="col-xs-8 col-xs-offset-2 title">
+			<a>&nbsp;<span class='amp-model'></span>&nbsp;</a>
+		</div>
+		<div class="col-xs-1">
+			<div class='glyphicon glyphicon-volume-off mute-ico' id ='mute-swt'></div>
+		</div>
+		<div class="col-xs-1">
+			<div class='glyphicon glyphicon-off pwr-ico' id ='pwr-swt'></div>
+		</div>
+	</div>
+</div>
+
+<!-- Opacifying rows -->
+<div class="container-fluid remove">
+
+	<!-- Sep titles  -->
+	<div class="row">
+		<div class="col-xs-4 sep-title">Volume</div>
+		<div class="col-xs-1 col-xs-offset-1 sep-title">Straight</div>
+		<div class="col-xs-1 sep-title">Enhancer</div>
+		<div class="col-xs-1 sep-title">Ad. DSP</div>
+		<div class="col-xs-1 sep-title">3D Ciné.</div>
+		<div class="col-xs-3 sep-title audio-decoder"></div>
+	</div>
+
+	<!-- Sounds -->
+	<div class="row">
+		<!-- volumes -->
+		<div class="col-xs-4 vol">
+			<div class="btn-group" role="group">
+			<!-- Down button -->
+				<button type="button" class="btn btn-default btn-xs" id='dwn-btn'>
+					<span class="glyphicon glyphicon-volume-down dwn-ico"></span>
+				</button>
+			<!-- Volume value -->
+				<button type="button" class="btn btn-info btn-xs vol-labl"></button>
+			<!-- Up button -->
+				<button type="button" class="btn btn-default btn-xs" id='up-btn'>
+					<span class="glyphicon glyphicon-volume-up up.ico"></span>
+				</button>
+			</div>
+		</div>
+		<!-- Straight label -->
+		<div class="col-xs-1 col-xs-offset-1"><span class="label label-default straight"></span></div>
+		<!-- Ehancer label -->	
+		<div class="col-xs-1"><span class="label label-default enhancer"></span></div>
+		<!-- Adaptive DSP label -->
+		<div class="col-xs-1"><span class="label label-default adsp"></span></div>
+		<!-- 3D Cine -->
+		<div class="col-xs-1"><span class="label label-default 3d"></span></div>
+		<!-- Soundprog label -->
+		<div class="col-xs-3 srnd">
+			<span class="label label-default srnd-labl">
+				<span class="glyphicon glyphicon-sound-dolby srnd-glyph"></span>
+				<span class="srnd-txt"></span>
+			</span>
+		</div>
+	</div>
+	<!-- sep -->
+	<div class='row'>
+		<div class='col-xs-11 col-xs-offset-1 sep'></div>
+	</div>
+
+	<!-- Input -->
+	<div class='row row-info'>
+		<div class='col-xs-2'>
+			<span class="label label-info input"></span>
+		</div>
+		<div class='col-xs-2'>
+			<span class="label inp-data-1"></span>
+		</div>
+		<!--<div class='col-xs-6 inp-border'><span class="label inp-data-2"></span></div>-->
+		<div class='col-xs-8'>
+			<span class="label inp-data-2"></span>
+		</div>
+	</div>
+</div>

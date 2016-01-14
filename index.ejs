@@ -1,0 +1,158 @@
+<%- layout('/layout/modal.ejs') -%>
+
+<!--Panel group-->
+<div class="panel-group">
+  <!--Auth-->
+  <div class="panel panel-success">
+    <div class="panel-heading">
+      <span class="label label-success">Auteur</span><small> Phil Bri.</small>
+    </div>
+  </div>
+  <!--Description-->
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4><span class="label label-info">Description</span></h4>
+      <strong>RxvRemote</strong> est un module permettant à <strong>SARAH</strong> de contrôler un amplificateur YAMAHA des séries RX-V ou RX-A connecté sur le réseau.
+    </div>
+  </div>
+  <!--Navigation-->
+  <div class="panel panel-default"> <!-- panel-body ou panel-heading ? -->
+    <ul class="nav nav-pills" role="tablist">
+      <li class="active">
+        <a href="#plugin-info" role="tab" data-toggle="pill"><span class="glyphicon glyphicon-home"></span></a>
+      </li>
+
+      <li>
+        <a href="#fonction" role="tab" data-toggle="pill">Configuration</a>
+      </li>
+
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Commandes <span class="caret"></span></a>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#cmd-yam" data-toggle="tab">Requètes Yamaha</a></li>
+          <li><a href="#cmd-vox" data-toggle="tab">Commandes vocales</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <!-- ************ Contenus ************ -->
+  <div class="tab-content panel">
+    <!--infos-->
+    <div class="tab-pane active panel panel panel-info" id="plugin-info">
+      <div class="panel-heading"><strong>Version 4.0</strong></div>
+      <div class="panel-body">
+        Version destinée à SARAH v4.x uniquement...
+        <p>Une version spécifique pour les V3.1x est aussi disponible sur le marketplace.</p>
+      </div>
+    </div>
+
+    <!-- Fonctionnalités -->
+    <div class="tab-pane" id="fonction">
+      <div class="panel panel-info">
+        <div class="panel-heading"><strong>Adresse IP</strong></div>
+        <div class="panel-body">
+          <p>
+            Pour pouvoir fonctionner, le module a besoin de connaître l'adresse IP de l'ampli afin de lui envoyer les requêtes demandées via le reseau.
+          </p>
+          <p>
+            Le module possède une fonction d'autodétection (facultative) de cette adresse IP. A condition toutefois que votre routeur soit paramétré pour ne pas bloquer le service UpNp...
+          </p>
+          Vous avez donc 2 possibilités via le portlet du module :
+          <ul>
+            <li>Laisser le module trouver votre ampli : <code>{Ampli_IP} : autodetect</code></li>
+            <li>Paramétrer l'IP : <code>{Ampli_IP} : 192.168.xxx.xxx</code></li>
+          </ul>
+          <strong>RXVRemote</strong> vous avertira des erreurs éventuelles.
+       </div>
+      </div>
+    </div>
+
+    <!-- Yamaha YNCA -->
+    <div class="tab-pane" id="cmd-yam">
+      <div class="panel panel-info">
+        <div class="panel-heading"><strong>YAMAHA YNCA</strong></div>
+        <div class="panel-body">
+          <p>
+            Les requètes sont envoyées vers l'ampli au format YNCA qui est plus ancien que le format YNC généralement utilisé. Il s'agit, en fait, de celui de l'interface RS232...
+          </p>
+          <p>
+            Ce choix est dû en grande partie à la compacité des commandes (YNC utilise des structures XML plus contraignates à créer/décoder), mais aussi au fait que l'on puisse utiliser le <code>{port} : 50000</code> qui est une socket.
+          </p>
+          <strong>Les avantages</strong>
+          <ul>
+            <li>Temps de réaction.</li>
+            <li>Retour d'infos de l'ampli (bidirectionnel).</li>
+          </ul>
+          <strong>Exemples de commandes</strong>
+          <ul>
+            <li>Commande 'PUT', utilisées pour passer un ordre à l'ampli (Power On, Volume +3, Entrée N°x...).</li>
+            <code>@MAIN:PWR=On[CR/LF]</code>
+            <li>Commande 'GET', utilisées pour connaître un état de l'ampli (Allumé ?, Volume ?, Entrée ?...).</li>
+            <code>@MAIN:PWR=?[CR/LF]</code>
+          </ul>
+          <strong>Retours de l'ampli</strong>
+          <ul>
+            <li>Exemple suite à GET PWR=?</li>
+            <code>@MAIN:PWR=On[CR/LF] </code>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Commandes Vocales -->
+    <div class="tab-pane" id="cmd-vox">
+      <div class="panel panel-info">
+        <div class="panel-heading"><strong>Grammaire</strong></div>
+        <div class="panel-body">
+          <p><strong>Modifications</strong></p>
+            L'ensemble de la grammaire utilisée par le module est stockée dans le fichier <code>RxvRemote.xml</code>
+          <p>
+            Ce fichier est aisément éditable par vos soins pour vous permettre de modifier, ajouter ou retirer une commande vocale.
+          </p>
+       </div>
+      </div>
+
+      <div class="panel panel-info">
+        <div class="panel-heading"><strong>Commandes vocales</strong></div>
+        <div class="panel-body">
+          Les commandes sont nombreuses mais obeissent à une logique simple.
+          <ul>
+            <li>Commencer par:</li>
+            <ul><li>Sarah</li></ul>
+            <li>Continuer avec le verbe de l'action demandée:</li>
+            <ul>
+              <li>Allume</li>
+              <li>Eteinds</li>
+              <li>Monte</li>
+              <li>Baisse</li>
+              <li>Sélectionne</li>
+            </ul>
+            <li>Poursuivre avec l'objet de l'action à entreprendre:</li>
+            <ul>
+              <li>L'ampli</li>
+              <li>Le son</li>
+              <li>L'entrée USB</li>
+              <li>L'USB</li>
+              <li>...</li>
+            </ul>
+            <li>Terminer avec:</li>
+            <ul>
+              <li>De l'ampli</li>
+              <li>l'ampli</li>
+              <li>...</li>
+            </ul>
+          </ul>
+          <strong>Exemples</strong>
+          <pre>
+            Sarah {allume, éteinds} l'ampli
+            Sarah {monte, baisse} le {volume,son} de l'ampli
+            Sarah sélectionne l'entrée {AV 1,...,AV 7}
+            Sarah sélectionne l'entrée radio
+            Sarah sélectionne l'entrée USB
+          </pre>
+       </div>
+     </div>
+    </div>
+  </div> <!-- Contenus -->
+</div><!-- Panel Group -->

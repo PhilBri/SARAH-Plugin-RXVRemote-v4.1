@@ -1,0 +1,135 @@
+/*@lightred: #EF3D47;*/
+/*#6A5F4D; noir*/
+/*#555b61; gris */
+#RxvRemote {
+  cursor: default;
+  font-weight: bold;
+  /* portlet */
+  /* Main Title */
+  /* buttons */
+  /*
+	.srnd { 
+		.srnd-labl, .srnd-glyph { padding-left: 2px; padding-right: 2px; }
+	}
+	*/
+  /*.label-default { font-weight: normal;}*/
+  /* Separators (dividers) */
+  /* Logo Yam */
+}
+#RxvRemote [class*="col-"] {
+  /*border: 1px solid black;*/
+  /*border-radius: 6px;*/
+  height: 24px;
+  padding-left: 0;
+  padding-right: 0;
+  text-align: center;
+}
+#RxvRemote .container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+}
+#RxvRemote .portlet-footer {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  height: 18px;
+  padding: 0 0 0 0;
+}
+#RxvRemote .portlet-footer .btn {
+  font-size: 14px;
+  background-color: transparent;
+  border: none;
+  color: #d2b48c;
+  padding: 0 0 0 0;
+}
+#RxvRemote .portlet-body {
+  height: 100%;
+  padding: 0px;
+  left: 30px;
+  border-right: 1px solid #6A5F4D;
+  border-bottom: 1px solid #6A5F4D;
+}
+#RxvRemote .portlet-header {
+  display: none;
+}
+#RxvRemote .main-row {
+  background-color: #d2b48c;
+  border: 1px solid #6A5F4D;
+  border-right: none;
+  height: 30px;
+  padding-top: 4px;
+  text-align: center;
+}
+#RxvRemote .title {
+  text-align: center;
+}
+#RxvRemote .title a {
+  color: #FAF0EA;
+  border: 1px solid;
+  text-decoration: none;
+}
+#RxvRemote .pwr-ico,
+#RxvRemote .mute-ico {
+  cursor: pointer;
+}
+#RxvRemote .vol {
+  color: #6A5F4D;
+}
+#RxvRemote .vol .vol-labl {
+  font-weight: bold;
+}
+#RxvRemote .vol .vol-labl:hover {
+  cursor: default;
+}
+#RxvRemote .row-info {
+  background-color: black;
+}
+#RxvRemote .sep-title {
+  height: 14px;
+  font-size: 9px;
+  color: #555b61;
+  font-style: italic;
+  font-weight: normal;
+}
+#RxvRemote .sep {
+  height: 5px;
+}
+#RxvRemote #logo {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border: 1px solid #6A5F4D;
+  width: 30px;
+  height: 30px;
+}
+#RxvRemote #logo #yam-logo {
+  position: absolute;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  width: auto;
+}
+#RxvRemote .plugin {
+  position: absolute;
+  background-color: #d2b48c;
+  color: #faf0ea;
+  border: 1px solid #6A5F4D;
+  width: 30px;
+  top: 29px;
+  bottom: 0;
+}
+#RxvRemote .plugin .text {
+  position: absolute;
+  font-size: 18px;
+  top: 53%;
+  transform: rotate(-90deg) translateX(-100%) translateX(60%);
+  transform-origin: left top;
+}
+#RxvRemote .plugin .vers {
+  position: absolute;
+  font-size: 10px;
+  bottom: 0px;
+  width: 30px;
+  text-align: center;
+}
