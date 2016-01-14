@@ -18,7 +18,6 @@ function setYam () {
         }
     }).on('connect', function (){
         console.log('\x1b[96m[  INFO ]\x1b[0m RxvRemote: Connected to Amp. (ip : ' + SARAH.context.rxvremote.ip+')');
-        
     }).on('end', function (){
         console.log('\033[91m[ ERROR ]\033[0m RxvRemote: Disconnected from Amp.');
         sockYAM.destroy();
