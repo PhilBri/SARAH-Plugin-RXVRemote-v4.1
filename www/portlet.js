@@ -1,6 +1,6 @@
 !function ($) {
     var register = function() {
-        var noir='#6A5F4D', lightred='#EF3D47', lightgreen='#90EE90', lightblue='#33A6CC', txtportlet='#555b61';
+        var noir='#6A5F4D', lightred='#EF3D47', lightgreen='#90EE90', lightblue='#33A6CC', txtportlet='#555b61', midgrey='#777';
         var power; var soundprog; var dolby; var decoder;
         $('.amp-pwr').css({'color':noir});
         $('.amp-model').text('Not Ready');
@@ -9,7 +9,6 @@
         // Buttons
         $('#mute-swt, #pwr-swt, #dwn-btn, #up-btn').click( function (event) {
             event.preventDefault();
-            var action = $(this).attr("id");
             if (this.id =='pwr-swt') {
                 if (power=='On') $.post('sarah/RxvRemote?key=@MAIN:PWR=Standby\r\n');
                 else $.post('sarah/RxvRemote?key=@MAIN:PWR=On\r\n');
@@ -44,8 +43,8 @@
                     $('.vol-labl').text(status+' dB');
                     break;
                 case 'MUTE':
-                    if (status == 'Off') $('.mute-ico').css({'color':noir, 'opacity':'0.3'})
-                    else  $('.mute-ico').css({'color':lightred, 'opacity':'1'});
+                    if (status == 'Off') $('.mute-ico').css({'color': midgrey })
+                    else  $('.mute-ico').css({'color': lightred });
                     break;
                 case 'INP':
                     $('.inp-data-2, .inp-data-1').text('');

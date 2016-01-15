@@ -1,0 +1,10 @@
+{
+	"cmds": [
+		"@SYS:MODELNAME=?\r\n",
+		"@MAIN:BASIC=?\r\n",
+		"@MAIN:ADAPTIVEDSP=?\r\n",
+		"@MAIN:3DCINEMA=?\r\n",
+		"@MAIN:EXSURDECODER=?\r\n",
+		"@MAIN:2CHDECODER=?\r\n"
+	]
+}
