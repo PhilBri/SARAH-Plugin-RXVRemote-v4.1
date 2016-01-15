@@ -8,11 +8,10 @@
 #RxvRemote {
 	cursor: default;
 	font-weight: bold;
+	* {border-radius: 0px;}
 
 
 	[class*="col-"] {
-		/*border: 1px solid black;*/
-		/*border-radius: 6px;*/
 		height: 24px;
 		padding-left: 0;
 		padding-right: 0;
@@ -26,105 +25,55 @@
 /* portlet */
 	.portlet-footer {
 		position: absolute;
-		bottom: 2px;
-		right: 2px;
-		height: 18px;
-		padding: 0 0 0 0;
-		.btn { font-size: 14px; background-color: transparent; 
-			border: none; color: @color; padding: 0 0 0 0;}
+		bottom: 87px;
+		.btn {
+			.glyphicon { padding: 0px; color: @color;}
+		}
 	}
 
 	.portlet-body   { 
 		height: 100%; 
-		padding: 0px; 
-		left:30px; 
-		border-right: 1px solid #6A5F4D; 
-		border-bottom: 1px solid #6A5F4D; 
+		padding: 0px;
+		left:30px;
 	}
 
 	.portlet-header { display: none; }
 
 /* Main Title */
-	.main-row {	background-color: @color;
-		border: 1px solid #6A5F4D;
-		border-right: none;
-		height: 30px;
+	.main-row {
+		background-color: @color;
 		padding-top: 4px;
 		text-align: center;
 	}
 
 	.title { text-align: center;
-		a {	color: #FAF0EA;
-			border: 1px solid;
+		a {
+			color: #FAF0EA;
 			text-decoration: none;
 		}
 	}
 
-
 /* buttons */
-	.pwr-ico, .mute-ico { cursor: pointer; }
+	.pwr-ico, .mute-ico { cursor: pointer; font-size: 16px;}
 
 	.vol { color: #6A5F4D;
 		.vol-labl { font-weight: bold;}
 		.vol-labl:hover { cursor: default; }
 	}
-	/*
-	.srnd { 
-		.srnd-labl, .srnd-glyph { padding-left: 2px; padding-right: 2px; }
-	}
-	*/
-	/*.label-default { font-weight: normal;}*/
-	.row-info { background-color: black; }
+
+	.label-default {}
+
+	.row-info { background-color: #777; }
+
+	.inp-data-2 {overflow: hidden;}
 
 /* Separators (dividers) */
 	.sep-title {
-		height: 14px; 
-		font-size: 9px; 
-		color: #555b61;
-		font-style: italic;
-		font-weight: normal;
+		margin-top: 4px;
+		height: 16px; 
+		font-size: 10px; 
+		color: #777;
 	}
 	.sep { height: 5px; }
 
-/* Logo Yam */
-	#logo {
-		position: absolute;
-		top: 0px;
-		left: 0px;
-		border: 1px solid #6A5F4D;
-		width: 30px;
-		height: 30px;
-		#yam-logo {
-			position: absolute;
-			display: block;
-			margin-left: auto;
-			margin-right: auto;
-			height: auto;
-			width: auto;
-		}
-	}
-
-	.plugin {
-		position: absolute;
-		background-color: @color;
-		color: @neige;
-		border: 1px solid #6A5F4D;
-		width: 30px;
-		top: 29px;
-		bottom: 0;
-		.text {
-			position: absolute;
-			font-size: 18px;
-			top: 53%;
-			transform: rotate(-90deg) translateX(-100%) translateX(60%);
-			transform-origin: left top;
-		}
-		.vers {
-			position: absolute;
-			font-size: 10px;
-			bottom: 0px;
-			width: 30px;
-			text-align: center;
-		}
-	}
 }

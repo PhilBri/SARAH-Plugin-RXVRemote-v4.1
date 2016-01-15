@@ -1,8 +1,10 @@
 !function ($) {
+
     var register = function() {
-        var noir='#6A5F4D', lightred='#EF3D47', lightgreen='#90EE90', lightblue='#33A6CC', txtportlet='#555b61', midgrey='#777';
-        var power; var soundprog; var dolby; var decoder;
-        $('.amp-pwr').css({'color':noir});
+        $("#RxvRemote .portlet-footer").detach().appendTo("#RxvRemote .portlet-body");
+        var lightred='#EF3D47', lightgreen='#90EE90', txtportlet='#555b61', midgrey='#777';
+        var power, soundprog, dolby, decoder;
+        $('.amp-pwr').css({'color':midgrey});
         $('.amp-model').text('Not Ready');
         $('.remove').hide();
 
@@ -27,7 +29,6 @@
             $('.remove').show();
         });
         socket.on('send_data', function (tab) {
-            /*setTimeout(function(){},300);*/
             var mode    = tab.split('=').shift();
             var status  = tab.split('=').pop();
             switch (mode) {
@@ -43,8 +44,8 @@
                     $('.vol-labl').text(status+' dB');
                     break;
                 case 'MUTE':
-                    if (status == 'Off') $('.mute-ico').css({'color': midgrey })
-                    else  $('.mute-ico').css({'color': lightred });
+                    if (status == 'Off') $('.mute-ico').css({'color':midgrey})
+                    else  $('.mute-ico').css({'color':lightred});
                     break;
                 case 'INP':
                     $('.inp-data-2, .inp-data-1').text('');
@@ -58,6 +59,7 @@
                     break;
                 case 'ADAPTIVEDSP':
                     $('.adsp').text(status);
+                    if (status == 'Auto') $(".adsp");
                     break;
                 case '3DCINEMA':
                     $('.3d').text(status);
@@ -102,8 +104,8 @@
             }
             soundprog ? $('.audio-decoder').text('Surround Decoder') : $('.audio-decoder').text('Music.prog');
             $('.label').each(function(){
-                if ($(this).text()=='On' || $(this).text()=='Auto') $(this).css({'color':lightgreen, 'font-weight':'bold'})
-                else $(this).css({'color':'#FFF', 'font-weight':'normal'});
+                if ($(this).text()=='On' || $(this).text()=='Auto') $(this).css({'color':lightgreen,'font-weight':'bold'})
+                else $(this).css({'color':'#FFF','font-weight':'normal'});
             });
         });
     }
@@ -111,5 +113,4 @@
     $(document).ready(function() {
         register();
     });
-  
 } (jQuery);
