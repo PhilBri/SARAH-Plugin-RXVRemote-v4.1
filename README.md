@@ -6,6 +6,8 @@ Plugin for S.A.R.A.H project by JP Encausse http://blog.encausse.net/s-a-r-a-h/
 
 ## Description
 
+![](../master/www/images/portlet.png)
+
 This plugin manage Yamaha RX-V & RX-A A/V amplifiers series with SARAH.
 
 ### Quick Start

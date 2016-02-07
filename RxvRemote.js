@@ -18,10 +18,12 @@ function setYam () {
         console.log('\x1b[96m[  INFO ]\x1b[0m RxvRemote: Connected to Amp. (ip : ' + Config.modules.RxvRemote.Ampli_IP + ')');
     }).on('end', function () {
         console.log('\033[91m[ ERROR ]\033[0m RxvRemote: Disconnected from Amp.');
-        sockYAM.destroy();
+        //sockYAM.destroy();
     }).on('error', function (erreur) {
         console.log('\033[91m[ ERROR ]\033[0m RxvRemote: ' + erreur.message );
-        sockYAM.destroy();
+        //sockYAM.destroy();
+    }).on('reconnect', function() {
+        setIo();
     });
 }
 
