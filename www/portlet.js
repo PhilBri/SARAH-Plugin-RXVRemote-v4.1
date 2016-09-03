@@ -1,9 +1,10 @@
 !function ($) {
 
     var register = function() {
-        $("#RxvRemote .portlet-footer").detach().appendTo("#RxvRemote .portlet-body");
-        var lightred='#EF3D47', lightgreen='#90EE90', txtportlet='#555b61', midgrey='#777';
+        var lightred='#EF3D47', lightgreen='#90EE90', txtportlet='#555b61', midgrey='#777', neige='#FAF0EA';
         var power, soundprog, dolby, decoder;
+
+        $("#RxvRemote .portlet-footer").detach().appendTo("#RxvRemote .portlet-body");
         $('.amp-pwr').css({'color':midgrey});
         $('.amp-model').text('Not Ready');
         $('.remove').hide();
@@ -12,10 +13,12 @@
         $('#mute-swt, #pwr-swt, #dwn-btn, #up-btn').click( function (event) {
             event.preventDefault();
             if (this.id =='pwr-swt') {
-                if (power=='On') $.post('sarah/RxvRemote?key=@MAIN:PWR=Standby\r\n');
-                else $.post('sarah/RxvRemote?key=@MAIN:PWR=On\r\n');
+                if (power=='On')
+                    $.post('sarah/RxvRemote?key=@MAIN:PWR=Standby\r\n');
+                else
+                    $.post('sarah/RxvRemote?key=@MAIN:PWR=On\r\n');
             }
-            if (power=='On') {
+            if (power=='On') { // sup du if ?
                 if (this.id =='mute-swt') $.post('sarah/RxvRemote?key=@MAIN:MUTE=On/Off\r\n');
                 if (this.id =='up-btn') $.post('sarah/RxvRemote?key=@MAIN:VOL=Up\r\n');
                 if (this.id =='dwn-btn') $.post('sarah/RxvRemote?key=@MAIN:VOL=Down\r\n');
@@ -33,22 +36,26 @@
             var status  = tab.split('=').pop();
             switch (mode) {
                 case 'MODELNAME':
-                    $('.amp-model').text('AV-Receiver model : '+status);
+                    $('.amp-model').text('AV-Receiver : '+status);
                     break;
                 case 'PWR':
-                    if (status == 'Standby') $('.pwr-ico').css({"color":lightred})
+                    if (status == 'Standby') {
+                        $('.pwr-ico').css({"color":lightred});
+                        $('.rds-prog').text('Station');
+                        $('.rds-data').text('Waiting for RDS datas ...');
+                    }
                     else  $('.pwr-ico').css({'color':lightgreen});
                     power = status;
                 break;
                 case 'VOL':
-                    $('.vol-labl').text(status+' dB');
+                    $('.vol-labl').text(status);
                     break;
                 case 'MUTE':
-                    if (status == 'Off') $('.mute-ico').css({'color':midgrey})
+                    if (status == 'Off') $('.mute-ico').css({'color': neige});//css({'color':midgrey});
                     else  $('.mute-ico').css({'color':lightred});
                     break;
                 case 'INP':
-                    $('.inp-data-2, .inp-data-1').text('');
+                    if (status != 'TUNER') $('.rds-prog, .rds-data').text('');
                     $('.input').text(status);
                     break;
                 case 'STRAIGHT':
@@ -62,7 +69,7 @@
                     if (status == 'Auto') $(".adsp");
                     break;
                 case '3DCINEMA':
-                    $('.3d').text(status);
+                    $('.cine-3d').text(status);
                     break;
                 case 'SOUNDPRG':
                     if (status=='Surround Decoder') {
@@ -92,10 +99,10 @@
                 case 'STATION':
                 case 'FMFREQ' :
                 case 'RDSPRGSERVICE' :
-                    $('.inp-data-1').text(status);
+                    $('.rds-prog').text(status);
                     break;
                 case 'RDSTXTA' :
-                    $('.inp-data-2').text(status);
+                    $('.rds-data').text(status);
                     break;
                 case 'PUREDIRMODE' : 
                     status == 'On'?$('.audio-decoder').text('Pure Direct').css({'color':lightgreen}) :
@@ -103,9 +110,9 @@
                     break;
             }
             soundprog ? $('.audio-decoder').text('Surround Decoder') : $('.audio-decoder').text('Music.prog');
-            $('.label').each(function(){
-                if ($(this).text()=='On' || $(this).text()=='Auto') $(this).css({'color':lightgreen,'font-weight':'bold'})
-                else $(this).css({'color':'#FFF','font-weight':'normal'});
+            $('.l1').each(function(){
+                if ($(this).text()!='Off') $(this).css({'color':lightgreen})
+                else $(this).css({'color':neige});
             });
         });
     }

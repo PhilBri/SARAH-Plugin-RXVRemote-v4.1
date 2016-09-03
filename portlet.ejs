@@ -6,15 +6,9 @@
 <div class="container-fluid portlet-handle">
 	<div class="row main-row">
 		<div class="col-xs-1 engren"></div>
-		<div class="col-xs-8 col-xs-offset-1 title">
-			<a>&nbsp;<span class='amp-model'></span>&nbsp;</a>
-		</div>
-		<div class="col-xs-1">
-			<div class='glyphicon glyphicon-volume-off mute-ico' id ='mute-swt'></div>
-		</div>
-		<div class="col-xs-1">
-			<div class='glyphicon glyphicon-off pwr-ico' id ='pwr-swt'></div>
-		</div>
+		<div class="col-xs-8 col-xs-offset-1"><p class='amp-model'></p></div>
+		<div class="col-xs-1"><p class='glyphicon glyphicon-volume-off mute-ico' id ='mute-swt'></p></div>
+		<div class="col-xs-1"><p class='glyphicon glyphicon-off pwr-ico' id ='pwr-swt'></p></div>
 	</div>
 </div>
 
@@ -22,64 +16,52 @@
 <div class="container-fluid remove">
 
 	<!-- Sep titles  -->
-	<div class="row">
-		<div class="col-xs-4 sep-title">Volume</div>
-		<div class="col-xs-1 sep-title">Strai.</div>
-		<div class="col-xs-1 sep-title">Enhan.</div>
-		<div class="col-xs-1 sep-title">3D Ciné</div>
-		<div class="col-xs-2 sep-title">DSP</div>
-		<div class="col-xs-3 sep-title audio-decoder"></div>
+	<div class="row legend-1">
+		<div class="col-xs-3">Volume (dB)</div>
+		<div class="col-xs-4 audio-decoder"></div>
+		<div class="col-xs-1 ">Strai.</div>
+		<div class="col-xs-1 ">Enhan.</div>
+		<div class="col-xs-1 ">3D</div>
+		<div class="col-xs-2 ">DSP</div>
 	</div>
 
 	<!-- Sounds -->
-	<div class="row">
+	<div class="row row-display">
 		<!-- volumes -->
-		<div class="col-xs-4 vol">
-			<div class="btn-group" role="group">
-			<!-- Down button -->
-				<button type="button" class="btn btn-default btn-xs" id='dwn-btn'>
-					<span class="glyphicon glyphicon-volume-down dwn-ico"></span>
-				</button>
-			<!-- Volume value -->
-				<button type="button" class="btn btn-info btn-xs vol-labl"></button>
-			<!-- Up button -->
-				<button type="button" class="btn btn-default btn-xs" id='up-btn'>
-					<span class="glyphicon glyphicon-volume-up up.ico"></span>
-				</button>
-			</div>
-		</div>
-		<!-- Straight label -->
-		<div class="col-xs-1 info"><span class="label label-default straight"></span></div>
-		<!-- Ehancer label -->	
-		<div class="col-xs-1 info"><span class="label label-default enhancer"></span></div>
-		<!-- 3D Cine -->
-		<div class="col-xs-1 info"><span class="label label-default 3d"></span></div>
-		<!-- Adaptive DSP label -->
-		<div class="col-xs-2 info"><span class="label label-default adsp"></span></div>
-		<!-- Soundprog label -->
-		<div class="col-xs-3 info srnd">
-			<span class="label label-default srnd-labl">
+		<div class="col-xs-1"><p id="dwn-btn"><span class="glyphicon glyphicon-volume-down dwn-ico" ></span></p></div>
+		<div class="col-xs-1"><p class="vol-labl"></p></div>
+		<div class="col-xs-1"><p id="up-btn"><span class="glyphicon glyphicon-volume-up up-ico"></span></p></div>
+
+		<!-- Surround label -->
+		<div class="col-xs-4 srnd info">
+			<p class="l1 srnd-labl">
 				<span class="glyphicon glyphicon-sound-dolby srnd-glyph"></span>
 				<span class="srnd-txt"></span>
-			</span>
+			</p>
 		</div>
-	</div>
-	<!-- sep -->
-	<div class='row'>
-		<div class='col-xs-11 col-xs-offset-1 sep'></div>
+		<div class="col-xs-1"><p class=" l1 straight"></p></div>
+		<!-- Ehancer label -->	
+		<div class="col-xs-1"><p class=" l1 enhancer"></p></div>
+		<!-- 3D Cine -->
+		<div class="col-xs-1"><p class=" l1 cine-3d"></p></div>
+		<!-- Adaptive DSP label -->
+		<div class="col-xs-2"><p class=" l1 adsp"></p></div>
 	</div>
 
+	<!-- sep -->
+	<!--
+	<div class='row legend-2'>
+		<div class='col-xs-3'>Input</div>
+		<div class='col-xs-2'>Station</div>
+		<div class='col-xs-7 scroll-left'>RDS Message</div>
+	</div>
+	-->
+<div class="container-fluid remove2">
 	<!-- Input -->
 	<div class='row row-info'>
-		<div class='col-xs-2'>
-			<span class="label label-info input"></span>
-		</div>
-		<div class='col-xs-2'>
-			<span class="label inp-data-1"></span>
-		</div>
-		<!--<div class='col-xs-6 inp-border'><span class="label inp-data-2"></span></div>-->
-		<div class='col-xs-8'>
-			<span class="label inp-data-2"></span>
-		</div>
+		<div class='col-xs-3'><p class="input"></p></div>
+		<div class='col-xs-2'><p class="rds-prog">Station</p></div>
+		<div class='col-xs-7 scroll-left'><p class="rds-data">Waiting for RDS datas</p></div>
 	</div>
+</div>
 </div>
